@@ -371,6 +371,20 @@ static const value_string ssl_20_cipher_suites[] = {
     { 0x00CCAD, "TLS_DHE_PSK_WITH_CHACHA20_POLY1305_SHA256" },
     { 0x00CCAE, "TLS_RSA_PSK_WITH_CHACHA20_POLY1305_SHA256" },
 
+    /* GM/T 0024-2014 */
+    { 0x00e001, "ECDHE_SM1_SM3"},
+    { 0x00e003, "ECC_SM1_SM3"},
+    { 0x00e005, "IBSDH_SM1_SM3"},
+    { 0x00e007, "IBC_SM1_SM3"},
+    { 0x00e009, "RSA_SM1_SM3"},
+    { 0x00e00a, "RSA_SM1_SHA1"},
+    { 0x00e011, "ECDHE_SM4_SM3"},
+    { 0x00e013, "ECC_SM4_SM3"},
+    { 0x00e015, "IBSDH_SM4_SM3"},
+    { 0x00e017, "IBC_SM4_SM3"},
+    { 0x00e019, "RSA_SM4_SM3"},
+    { 0x00e01a, "RSA_SM4_SHA1"},
+
     /* https://tools.ietf.org/html/draft-josefsson-salsa20-tls */
     { 0x00E410, "TLS_RSA_WITH_ESTREAM_SALSA20_SHA1" },
     { 0x00E411, "TLS_RSA_WITH_SALSA20_SHA1" },
@@ -408,19 +422,7 @@ static const value_string ssl_20_cipher_suites[] = {
     { 0x060040, "SSL2_DES_64_CBC_WITH_MD5" },
     { 0x0700c0, "SSL2_DES_192_EDE3_CBC_WITH_MD5" },
     { 0x080080, "SSL2_RC4_64_WITH_MD5" },
-     /*GMTLS: GM/T 0024-2014*/
-    { 0x00e001, "ECDHE_SM1_SM3"},
-    { 0x00e003, "ECC_SM1_SM3"},
-    { 0x00e005, "IBSDH_SM1_SM3"},
-    { 0x00e007, "IBC_SM1_SM3"},
-    { 0x00e009, "RSA_SM1_SM3"},
-    { 0x00e00a, "RSA_SM1_SHA1"},
-    { 0x00e011, "ECDHE_SM4_SM3"},
-    { 0x00e013, "ECC_SM4_SM3"},
-    { 0x00e015, "IBSDH_SM4_SM3"},
-    { 0x00e017, "IBC_SM4_SM3"},
-    { 0x00e019, "RSA_SM4_SM3"},
-    { 0x00e01a, "RSA_SM4_SHA1"},
+
     { 0x00, NULL }
 };
 
@@ -1100,6 +1102,19 @@ static const value_string ssl_31_ciphersuite[] = {
     { 0xD005, "TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256" },
     /* RFC 8701 */
     { 0xDADA, "Reserved (GREASE)" },
+    /* GM/T 0024-2014 */
+    { 0xe001, "ECDHE_SM1_SM3"},
+    { 0xe003, "ECC_SM1_SM3"},
+    { 0xe005, "IBSDH_SM1_SM3"},
+    { 0xe007, "IBC_SM1_SM3"},
+    { 0xe009, "RSA_SM1_SM3"},
+    { 0xe00a, "RSA_SM1_SHA1"},
+    { 0xe011, "ECDHE_SM4_SM3"},
+    { 0xe013, "ECC_SM4_SM3"},
+    { 0xe015, "IBSDH_SM4_SM3"},
+    { 0xe017, "IBC_SM4_SM3"},
+    { 0xe019, "RSA_SM4_SM3"},
+    { 0xe01a, "RSA_SM4_SHA1"},
     /* https://tools.ietf.org/html/draft-josefsson-salsa20-tls */
     { 0xE410, "TLS_RSA_WITH_ESTREAM_SALSA20_SHA1" },
     { 0xE411, "TLS_RSA_WITH_SALSA20_SHA1" },
@@ -1126,21 +1141,6 @@ static const value_string ssl_31_ciphersuite[] = {
     { 0xfeff, "SSL_RSA_FIPS_WITH_3DES_EDE_CBC_SHA" },
     { 0xffe0, "SSL_RSA_FIPS_WITH_3DES_EDE_CBC_SHA" },
     { 0xffe1, "SSL_RSA_FIPS_WITH_DES_CBC_SHA" },
-
-     /*GMSSL: GM/T 0024-2014*/
-    { 0xe001, "ECDHE_SM1_SM3"},
-    { 0xe003, "ECC_SM1_SM3"},
-    { 0xe005, "IBSDH_SM1_SM3"},
-    { 0xe007, "IBC_SM1_SM3"},
-    { 0xe009, "RSA_SM1_SM3"},
-    { 0xe00a, "RSA_SM1_SHA1"},
-    { 0xe011, "ECDHE_SM4_SM3"},
-    { 0xe013, "ECC_SM4_SM3"},
-    { 0xe015, "IBSDH_SM4_SM3"},
-    { 0xe017, "IBC_SM4_SM3"},
-    { 0xe019, "RSA_SM4_SM3"},
-    { 0xe01a, "RSA_SM4_SHA1"},
-
     /* note that ciphersuites 0xff00 - 0xffff are private */
     { 0x00, NULL }
 };
