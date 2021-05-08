@@ -1,6 +1,6 @@
 name: Build Windows
 
-on: [push]
+on: push
 
 jobs:
   windows:
@@ -69,3 +69,11 @@ jobs:
         with:
           name: packages
           path: exe
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/') && endsWith(github.ref, 'gm')
+        with:
+          files:
+            exe/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
