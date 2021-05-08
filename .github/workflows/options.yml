@@ -1,9 +1,6 @@
 name: CMake Options Test
 
-on:
-  push:
-  schedule:
-    - cron: '1 0 * * *'
+on: push
 
 jobs:
   options:
