@@ -1,6 +1,6 @@
 name: Build Ubuntu
 
-on: [push]
+on: push
 
 jobs:
   ubuntu:
@@ -44,3 +44,11 @@ jobs:
         with:
           name: packages
           path: deb
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/') && endsWith(github.ref, 'gm')
+        with:
+          files:
+            deb/*.deb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
