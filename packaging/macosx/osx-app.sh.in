@@ -203,6 +203,7 @@ while $endl; do
 		| sed '1,$s;^	@rpath/libsnappy;	/usr/local/lib/libsnappy;' \
 		| sed '1,$s;^	@rpath/libssh;	/usr/local/lib/libssh;' \
 		| sed '1,$s;^	libbrotli;	/usr/local/lib/libbrotli;' \
+		| sed "s/@loader_path\/libbrotlicommon.1.dylib/\/usr\/local\/opt\/brotli\/lib\/libbrotlicommon.1.dylib/g" \
 		| grep -E -v "$exclude_prefixes" \
 		| sort \
 		| uniq \
