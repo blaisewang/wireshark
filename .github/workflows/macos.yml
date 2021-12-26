@@ -46,20 +46,16 @@ jobs:
       - name: Build dmg
         run: ninja dmg_package
         working-directory: build
-      - name: Move dmg package
-        run: |
-          mkdir dmg
-          mv build/run/*dmg dmg/
       - name: Upload dmg packages
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
-          name: packages
-          path: dmg
+          name: package
+          path: build/run/*dmg
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/') && endsWith(github.ref, 'gm')
         with:
           files:
-            dmg/*.dmg
+            build/run/*dmg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
